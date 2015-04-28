@@ -1,0 +1,22 @@
+<% @backends.each do |name, config| %>
+backend "<%= name %>" {
+  <% config.each do |key, value| %>
+  <%= key %> = "<%= value %>"
+  <% end %>
+}
+<% end %>
+
+<% @listeners.each do |name, config| %>
+listener "<%= name %>" {
+  <% config.each do |key, value| %>
+  <%= key %> = "<%= value %>"
+  <% end %>
+}
+<% end %>
+
+<% if @statsite_addr %>
+statsite_addr = <%= @statsite_addr %>
+<% end %>
+<% if @statsd_addr %>
+statsd_addr = <%= @statsd_addr %>
+<% end %>

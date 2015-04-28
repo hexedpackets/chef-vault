@@ -1,0 +1,23 @@
+---
+driver:
+  name: docker
+
+provisioner:
+  name: chef_solo
+
+platforms:
+  - name: ubuntu-14.04
+    driver_config:
+      disable_upstart: false
+
+suites:
+  - name: default
+    run_list:
+      - recipe[vault::default]
+    attributes:
+  - name: server
+    run_list:
+      - recipe[vault::default]
+    attributes:
+      vault:
+        mode: server
