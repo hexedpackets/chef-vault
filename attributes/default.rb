@@ -2,7 +2,7 @@
 # User-specified values
 ###############################################################################
 default[:vault][:bin_dir] = "/usr/local/bin"
-default[:vault][:version] = "0.1.0"
+default[:vault][:version] = "0.2.0"
 default[:vault][:mode] = "client"
 
 
