@@ -16,6 +16,17 @@ default[:vault][:server][:log_level] = "info"
 default[:vault][:server][:statsite_addr] = nil
 default[:vault][:server][:statsd_addr] = nil
 
+# Setting to a falsey value will disable putting the OOM score in the upstart scripts
+default[:vault][:server][:oom_score] = value_for_platform(
+  %w(amazon debian ubuntu) => {
+    'default' => -100
+  },
+  %w(redhat centos) => {
+    'default' => nil
+  },
+  'default' => -100
+)
+
 # https://vaultproject.io/docs/config/index.html#backend
 default[:vault][:server][:backends] = {
   consul: {

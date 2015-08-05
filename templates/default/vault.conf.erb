@@ -13,7 +13,9 @@ limit core unlimited unlimited
 start on runlevel [2345]
 stop on starting rc RUNLEVEL=[016]
 
-oom score -100
+<% if node[:vault][:server][:oom_score] %>
+oom score <%= node[:vault][:server][:oom_score] %>
+<% end %>
 respawn
 
 exec <%= node[:vault][:bin_dir] %>/vault server -config=<%= node[:vault][:server][:config] %> -log-level=<%= node[:vault][:server][:log_level] %>
