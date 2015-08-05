@@ -55,6 +55,13 @@ WARNING: The default behavior of the server is to start unconfigured. You must r
     <td><tt>upstart</tt></td>
   </tr>
   <tr>
+    <td><tt>[:vault][:server][:oom_score]</tt></td>
+    <td>Integer</td>
+    <td>OOM score adjustment in the init config.</td>
+    <td><tt>-100</tt></td>
+  </tr>
+
+  <tr>
     <td><tt>[:vault][:server][:backends]</tt></td>
     <td>Hash</td>
     <td>Name of backends to enable along with their configurations.</td>
