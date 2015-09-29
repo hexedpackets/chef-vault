@@ -6,7 +6,18 @@ In client mode, only the Vault binary will be installed.
 In server mode, the binary will be installed, configured, and started as server.
 WARNING: The default behavior of the server is to start unconfigured. You must run `vault init` to generate the unseal keys and the initial root token.
 
-## Attributes
+
+###Requirements
+#### Platforms
+- Debian/Ubuntu
+
+#### Chef
+- Chef 11+
+
+#### Cookbooks
+- none
+
+### Attributes
 
 #### vault::default
 <table>
@@ -86,7 +97,7 @@ WARNING: The default behavior of the server is to start unconfigured. You must r
   </tr>
 </table>
 
-## Usage
+### Usage
 #### vault::default
 
 Just include `vault` in your node's `run_list`. This will load either `vault::client` or `vault::server` depending on the value of `node[:vault][:mode]`.
