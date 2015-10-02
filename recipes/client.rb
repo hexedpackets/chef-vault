@@ -1,1 +1,1 @@
-include_recipe "vault::install"
+include_recipe 'vault::install'
