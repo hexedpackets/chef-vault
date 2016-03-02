@@ -47,4 +47,4 @@ default[:vault][:server][:listeners] = {
 # Derived values, not meant to be manually set
 ###############################################################################
 default[:vault][:zip_file] = "vault_#{node[:vault][:version]}_linux_amd64.zip"
-default[:vault][:download_url] = "https://dl.bintray.com/mitchellh/vault/#{node[:vault][:zip_file]}"
+default[:vault][:download_url] = "https://releases.hashicorp.com/vault/#{node[:vault][:zip_file]}"
